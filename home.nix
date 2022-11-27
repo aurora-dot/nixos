@@ -8,6 +8,10 @@ let
   polybarCustom = import ./i3/polybar.nix;
   picomCustom = import ./i3/picom.nix;
   dunstCustom = import ./dunst/settings.nix;
+  unstable = import
+    (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/master")
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
 
 in {
   # to install: https://rycee.gitlab.io/home-manager/index.html#sec-install-nixos-module
@@ -35,6 +39,11 @@ in {
 
     gtk = {
       enable = true;
+      iconTheme = {
+        package = (unstable.papirus-icon-theme.override {color = "magenta";});
+        name = "Papirus-Dark";
+      };
+
       theme = {
         name = "Dracula";
         package = pkgs.dracula-theme;

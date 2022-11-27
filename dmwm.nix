@@ -23,15 +23,15 @@
         show-password-label = true
         [greeter-theme]
         background-image = ""
-	font = "FiraCode Nerd Font"
-	text-color = "#f8f8f2"
-	error-color = "#ff5555"
-	background-color = "#282a36"
-	window-color = "#44475a"
-	border-color = "#bd93f9"
-	password-background-color = "#282a36"
-	password-color = "#f8f8f2"
-	password-border-color = "#bd93f9"
+        font = "FiraCode Nerd Font"
+        text-color = "#f8f8f2"
+        error-color = "#ff5555"
+        background-color = "#282a36"
+        window-color = "#44475a"
+        border-color = "#bd93f9"
+        password-background-color = "#282a36"
+        password-color = "#f8f8f2"
+        password-border-color = "#bd93f9"
        '';
     };
     

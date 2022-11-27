@@ -1,11 +1,5 @@
 { config, pkgs, ... }:
-
-let
-unstable = import
-    (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/master")
-    # reuse the current configuration
-    { config = config.nixpkgs.config; };
-in {
+{
   environment.systemPackages = with pkgs; [
     gnome.gnome-keyring
     xclip
@@ -39,8 +33,6 @@ in {
     # blueman-applet
     nitrogen
     pamixer
-
-    (unstable.papirus-icon-theme.override {color = "magenta";})
 
     # internet
     ungoogled-chromium
