@@ -155,9 +155,18 @@ in {
       click-right = "pavucontrol";
       ramp-font = 4;
 
-      ramp-volume-0 = "🔈";
-      ramp-volume-1 = "🔉";
-      ramp-volume-2 = "🔊";
+      # ramp-volume-0 = "🔈";
+      # ramp-volume-1 = "🔉";
+      # ramp-volume-2 = "🔊";
+      
+      ramp-volume-0 = "▁";
+      ramp-volume-1 = "▂";
+      ramp-volume-2 = "▃";
+      ramp-volume-3 = "▄";
+      ramp-volume-4 = "▅";
+      ramp-volume-5 = "▆";
+      ramp-volume-6 = "▇";
+      ramp-volume-7 = "█";
 
       label-muted = "🔇";
       label-muted-background = "${background}";
