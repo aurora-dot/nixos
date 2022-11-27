@@ -26,6 +26,11 @@ in {
     services.dunst = dunstCustom pkgs;
     xsession.windowManager.i3 = i3Custom pkgs;
 
+    home.packages = with pkgs;
+      [
+        unstable.any-nix-shell
+      ];
+
     home.file.".icons/default".source =
       "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
 
