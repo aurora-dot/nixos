@@ -139,6 +139,10 @@ in {
     "${mod}+s" = "exec mocp --stop";
     "${mod}+d" = "exec mocp --previous";
     "${mod}+f" = "exec mocp --next";
+    
+    # Switch workspaces
+    "${mod}+bracketleft" = "workspace prev";
+    "${mod}+bracketright" = "workspace next";
 
     # rofi bindings fancy menu
     "${mod}+space" =

@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    qjackctl
+    bintools
+    pkg-config
+    openssl
     gnome.gnome-keyring
     xclip
     pavucontrol
@@ -16,6 +20,7 @@
     wget
     python
     rustup
+    rust-analyzer
     brightnessctl
     rofi
     dunst
@@ -84,9 +89,6 @@
     ## js
     nodejs
     nodePackages.prettier
-    ## rust
-    rust-analyzer
-    rustup
     ## python
     python311
     black
@@ -121,4 +123,6 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
+
+  systemd.user.services.pipewire-pulse.path = [ pkgs.pulseaudio ];
 }

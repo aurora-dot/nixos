@@ -5,5 +5,6 @@
     EDITOR = "nvim";
     SUDO_EDITOR = "nvim";
     MOZ_USE_XINPUT2 = "1";
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 }
