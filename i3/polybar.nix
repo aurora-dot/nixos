@@ -21,9 +21,9 @@ in {
   enable = true;
 
   script = ''
-  killall -q polybar
-  while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-  polybar top &
+    killall -q polybar
+    while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+    polybar top &
   '';
 
   config = {
@@ -135,8 +135,8 @@ in {
       type = "internal/date";
       interval = 10;
 
-      time = "\"%H:%M\"";
-      date = "\"%d %b\"";
+      time = ''"%H:%M"'';
+      date = ''"%d %b"'';
 
       label = "%date% %time%";
       label-background = "${background}";
@@ -158,7 +158,7 @@ in {
       # ramp-volume-0 = "🔈";
       # ramp-volume-1 = "🔉";
       # ramp-volume-2 = "🔊";
-      
+
       ramp-volume-0 = "▁";
       ramp-volume-1 = "▂";
       ramp-volume-2 = "▃";

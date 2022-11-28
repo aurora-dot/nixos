@@ -1,3 +1,1 @@
-{ pkgs, ... }: {
-  vSync = true;
-}
+{ pkgs, ... }: { vSync = true; }

@@ -124,10 +124,8 @@ in {
     "${mod}+r" = "mode 'resize'";
 
     # set $refresh_i3status killall -SIGUSR1 i3status
-    "${mod}+g" =
-      "exec --no-startup-id pamixer -d 2";
-    "${mod}+h" =
-      "exec --no-startup-id pamixer -i 2";
+    "${mod}+g" = "exec --no-startup-id pamixer -d 2";
+    "${mod}+h" = "exec --no-startup-id pamixer -i 2";
     "${mod}+m" =
       "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
 
@@ -139,7 +137,7 @@ in {
     "${mod}+s" = "exec mocp --stop";
     "${mod}+d" = "exec mocp --previous";
     "${mod}+f" = "exec mocp --next";
-    
+
     # Switch workspaces
     "${mod}+bracketleft" = "workspace prev";
     "${mod}+bracketright" = "workspace next";
@@ -149,8 +147,10 @@ in {
       "exec rofi -modi drun -show drun -line-padding 4 -columns 1 -padding 50 -hide-scrollbar -show-icons -drun-icon-theme 'Dracula' -font 'FiraCode Nerd Font Regular 11'";
     "${mod}+Shift+space" =
       "exec rofi -show window -line-padding 4 -lines 6 -padding 50 -hide-scrollbar -show-icons -drun-icon-theme 'Dracula' -font 'FiraCode Nerd Font Regular 10'";
-    "${mod}+Shift+p" = "--release scrot -s -e 'xclip -selection c -t image/png < $f && mv $f ~/Pictures/Screenshots'";
-    "${mod}+p" = "--release exec scrot -e 'xclip -selection c -t image/png < $f && mv $f ~/Pictures/Screenshots' ";
+    "${mod}+Shift+p" =
+      "--release scrot -s -e 'xclip -selection c -t image/png < $f && mv $f ~/Pictures/Screenshots'";
+    "${mod}+p" =
+      "--release exec scrot -e 'xclip -selection c -t image/png < $f && mv $f ~/Pictures/Screenshots' ";
   };
 
   modes = {
@@ -184,11 +184,26 @@ in {
 
   startup = [
     # { command = "--no-startup-id lxsession &"; always = true; }
-    { command = "--no-startup-id picom --experimental-backends"; always = true; }
-    { command = "--no-startup-id feh --bg-center /etc/nixos/wallpaper.png"; always = true; }
-    { command = "--no-startup-id polybar"; always = true; }
-    { command = "--no-startup-id nitrogen --restore"; always = true; }
-    { command = "--no-startup-id exec i3-msg workspace 1"; always = true; }
+    {
+      command = "--no-startup-id picom --experimental-backends";
+      always = true;
+    }
+    {
+      command = "--no-startup-id feh --bg-center /etc/nixos/wallpaper.png";
+      always = true;
+    }
+    {
+      command = "--no-startup-id polybar";
+      always = true;
+    }
+    {
+      command = "--no-startup-id nitrogen --restore";
+      always = true;
+    }
+    {
+      command = "--no-startup-id exec i3-msg workspace 1";
+      always = true;
+    }
   ];
 
   workspaceLayout = "default";

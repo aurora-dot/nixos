@@ -26,10 +26,7 @@ in {
     services.dunst = dunstCustom pkgs;
     xsession.windowManager.i3 = i3Custom pkgs;
 
-    home.packages = with pkgs;
-      [
-        unstable.any-nix-shell
-      ];
+    home.packages = with pkgs; [ unstable.any-nix-shell ];
 
     home.file.".icons/default".source =
       "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
@@ -45,7 +42,7 @@ in {
     gtk = {
       enable = true;
       iconTheme = {
-        package = (unstable.papirus-icon-theme.override {color = "magenta";});
+        package = (unstable.papirus-icon-theme.override { color = "magenta"; });
         name = "Papirus-Dark";
       };
 
