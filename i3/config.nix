@@ -53,7 +53,7 @@ in {
 
   keybindings = lib.mkOptionDefault {
     "${mod}+u" = "border none";
-    "${mod}+y" = "border pixel 3";
+    "${mod}+y" = "border pixel 4";
     "${mod}+n" = "border normal";
     "${mod}+t" = "exec kitty";
     "${mod}+q" = "kill";
@@ -203,6 +203,9 @@ in {
     {
       command = "--no-startup-id exec i3-msg workspace 1";
       always = true;
+    }
+    {
+      command = "--no-startup-id mullvad-vpn";
     }
   ];
 

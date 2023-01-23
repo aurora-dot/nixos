@@ -1,6 +1,13 @@
 { config, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     qjackctl
+    stdenv.cc.cc.lib
+    discord
+    busybox
+    zip
+    steam
+    ffmpeg
+    yubioath-desktop
     bintools
     pkg-config
     openssl
@@ -32,6 +39,8 @@
     gnupg
     cmake
     gcc
+    glibc
+    libcxx
     bintools-unwrapped
     picom
     # blueman-applet
